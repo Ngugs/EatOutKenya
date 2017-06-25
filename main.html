@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>EatOut - Kenya</title>
+<link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet"> 
+<style type="text/css">body{font-family: 'Raleway', sans-serif;}a{text-decoration:none;border-radius:5px;display:block;padding:20px;width:100px;color:#fff;background:#2b71b1;}table{border:solid 1px #000;border-collapse: collapse;margin-top:40px;color:#000;border-spacing: 0;width:800px}table thead{}th {padding:20px;border:solid 1px #000}td {padding: 20px;}tr{border:solid 1px #000}tbody tr{}body>div{color:#000;background:#ebeced;max-width:960px;width:960px;margin-left:auto;margin-right:auto;padding:50px;margin:100px;border:solid 1px #441111;border-radius:5px}textarea{width:800px;height:300px;padding:5px}</style>
+<script type="text/javascript">
+function analyse(){
+var insid='{';
+var globalarray=[];var globalarray2=[];var globalarray3=[];
+for(var x=0;x < document.getElementsByTagName('textarea').length;x++){
+    var stext=[];var stext1=[];var stext2=[];var words=document.getElementsByTagName('textarea')[x].value.split(" ");
+    for(var i=0;i<words.length;i++){
+       var txt=words[i].replace(/[()"".?!,;:]/g, '').toLowerCase( );var nocarr=txt.replace(/[\n\r]/g," ");
+       var s=nocarr.split(" ");for(var y=0;y<s.length;y++){stext2.push(s[y]);}
+    }
+    stext2.sort();
+    for(var i=0;i<stext2.length;i++){
+       var text=stext2[i];if(text !="")globalarray.push(text);
+       if (stext.indexOf(text)===-1) {stext1.push(stext2.filter(function(it){return it===text;}).length);stext.push(text);}
+    }
+    insid +='"Document '+(x+1)+'":{';
+    for(var i=0;i<stext.length;i++){
+       if(stext[i]!=""){
+	  insid +='"'+stext[i]+'":"'+stext1[i]+'"';
+          if (i<stext.length-1)insid +=','; 
+       }
+    }
+    insid +='}';
+    }
+    globalarray.sort();
+    for(var x=0;x < globalarray.length;x++){
+        if(globalarray2.indexOf(globalarray[x])===-1) {
+           globalarray3.push(globalarray.filter(function(it){return it===globalarray[x];}).length);
+           globalarray2.push(globalarray[x]);
+        } 
+    }
+    insid +='"All Documents":{';
+    for(var i=0;i<globalarray3.length;i++){
+        insid +='"'+globalarray2[i]+'":"'+globalarray3[i]+'"';
+        if (i<globalarray3.length-1)insid +=',';
+    }
+    insid +='}}';document.getElementById('div1').innerHTML='<textarea>'+insid+'</textarea>';
+    return false;
+}
+</script>
+</head>
+<body><div>
+<p>Please Provide The Text To Analyse Here !</p>
+<p>Document 1</p><textarea></textarea><p>Document 2</p><textarea></textarea><p>Document 3</p><textarea></textarea><br/><br/><a href="#"onclick="analyse()">Let's Go</a><div id="div1"></div></div>
+</body>
+</html>
