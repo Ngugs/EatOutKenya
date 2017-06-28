@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['text2'])){
 </head>
 <body><div><p>This Solution Counts The Number Of Times A Word Appears In The Provided Text.</p>
 <p>Please Click The Post Button Below To Analyse The Document</p>
-<p>Document 2</p><form action="one.php" accept-charset="utf-8" method="post" ><textarea name="text2">Caius was grabbed from his bunk and pulled out of the tent into the dark of night. With a hood over his face, he could only hear the thwunk sounds of a helicopter coming closer. He felt the wind begin to pick up, swirling around his bare skin, as he hadn't even been allowed an opportunity to dress. As soon as it landed, he was dragged aboard, and it took off again.
+<p>Document 2</p><form action="two.php" accept-charset="utf-8" method="post" ><textarea name="text2">Caius was grabbed from his bunk and pulled out of the tent into the dark of night. With a hood over his face, he could only hear the thwunk sounds of a helicopter coming closer. He felt the wind begin to pick up, swirling around his bare skin, as he hadn't even been allowed an opportunity to dress. As soon as it landed, he was dragged aboard, and it took off again.
 
 His hood was removed. He sat before a man in formal white robes, who sat in silence studying him. The dull red lights that lit the back of the helicopter gave him a devilish appearance. He tapped his fingertips together as he soaked in every inch of Caius' appearance.
 
