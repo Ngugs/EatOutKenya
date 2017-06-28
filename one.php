@@ -5,8 +5,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['text2'])){
    $repl=array('');
    //remove all punctuation marks eg ,:
    foreach ($words as $s){
-     $repl[]=str_replace(array(',','.',';',':','"'),'',strtolower($s));
+     $repl[]=str_replace(array(',','.',';',':','"','(',')'),'',strtolower($s));
    }   
+   sort($repl);
    //arrays to hold unique words and unique counts
    $unique_words=array('');$unique_counts=array('');
    //create new array of unique words and count how many times they appear
