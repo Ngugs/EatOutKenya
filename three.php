@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['text2'])){
 </head>
 <body><div><p>This Solution Counts The Number Of Times A Word Appears In The Provided Text.</p>
 <p>Please Click The Post Button Below To Analyse The Document</p>
-<p>Document 3</p><form action="one.php" accept-charset="utf-8" method="post" ><textarea name="text2">A prank? Barack stared at the letter. If it was a prank, it was a damn good one. The signature was exquisite--looping and elongated, a near mirror image of JFK's real signature. Well, if someone went through this much effort for a simple joke, he might as well entertain them.
+<p>Document 3</p><form action="three.php" accept-charset="utf-8" method="post" ><textarea name="text2">A prank? Barack stared at the letter. If it was a prank, it was a damn good one. The signature was exquisite--looping and elongated, a near mirror image of JFK's real signature. Well, if someone went through this much effort for a simple joke, he might as well entertain them.
 
 He looked around to make sure neither his wife or daughter was around. He walked into the living room just in case and dialed the number.
 
