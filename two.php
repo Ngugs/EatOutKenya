@@ -5,14 +5,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['text2'])){
    $repl=array('');
    //remove all punctuation marks eg ,:
    foreach ($words as $s){
-     $repl[]=str_replace(array(',','.',';',':','"'),'',strtolower($s));
+     $repl[]=str_replace(array(',','.',';',':','"','(',')'),'',strtolower($s));
    }   
+   sort($repl);
    //arrays to hold unique words and unique counts
    $unique_words=array('');$unique_counts=array('');
    //create new array of unique words and count how many times they appear
    foreach ($repl as $s){
-     if(array_count_values($unique_words)[$s]==0){
-       $unique_words[]=$s;$unique_counts[]=array_count_values($repl)[$s];
+     //replace carriage return
+     $words2=explode('\n\r',$s);
+     foreach ($words2 as $x){
+        if(array_count_values($unique_words)[$x]==0){
+          $unique_words[]=$x;$unique_counts[]=array_count_values($repl)[$x];
+        }
      }
    }
    //print out xml doc of analysis
